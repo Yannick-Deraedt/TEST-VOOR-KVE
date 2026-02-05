@@ -1,0 +1,122 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+/* --------- Animatie voor fade-in en slide van secties --------- */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.9s cubic-bezier(.27,.57,.5,1.08) forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------- Hover & schaal-effecten op cards/preview --------- */
+.section-card {
+  transition: box-shadow 0.3s, transform 0.22s;
+  box-shadow: 0 2px 8px #14376a11;
+}
+.section-card:hover {
+  box-shadow: 0 7px 32px #14376a33;
+  transform: scale(1.015);
+}
+
+/* --------- Glans animatie op titels --------- */
+.glow-title {
+  position: relative;
+  overflow: hidden;
+}
+.glow-title::after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(110deg, rgba(255,255,255,0.0) 60%, rgba(255,255,255,0.45) 80%, rgba(255,255,255,0.0) 100%);
+  animation: title-glow 2.4s cubic-bezier(.6,.12,.7,1) infinite;
+}
+@keyframes title-glow {
+  0%   { left: -100%; }
+  60%  { left: 120%; }
+  100% { left: 120%; }
+}
+
+/* --------- Selected animatie voor speler --------- */
+.selected-row-anim {
+  animation: select-row-anim 0.38s cubic-bezier(.49,.3,.52,.93);
+  background: #c4f6d1 !important;
+}
+@keyframes select-row-anim {
+  0%   { background: #fffadf; }
+  50%  { background: #b5f0c7; }
+  100% { background: #c4f6d1; }
+}
+
+/* --------- Light pulse-effect voor copy button --------- */
+.copy-btn-pulse {
+  animation: copyPulse 1.2s infinite alternate;
+  box-shadow: 0 0 14px #6cf7ffcc, 0 0 0px #fff0;
+}
+@keyframes copyPulse {
+  0% { box-shadow: 0 0 2px #b2fcfc80; }
+  100% { box-shadow: 0 0 24px #6cf7ff99; }
+}
+
+/* --------- Table row hover --------- */
+.table-row-hover:hover {
+  background: #eaf6ff;
+  transition: background 0.18s;
+}
+
+/* --------- Zachte blur bij overlay/modal (indien gebruikt) --------- */
+.bg-blur {
+  backdrop-filter: blur(8px) brightness(0.98);
+  background: rgba(240,244,255,0.14);
+}
+
+/* --------- Kleine helpers voor visuele accenten --------- */
+.rounded-xl { border-radius: 18px; }
+.shadow-strong { box-shadow: 0 6px 32px #1e375c1a; }
